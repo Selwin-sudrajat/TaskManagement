@@ -6,15 +6,10 @@
 <div class="row h-100">
     <div class="col-md-12">&nbsp;</div>
     <div class="col-md-12 pl-5">
-        <div class="landing-title" style="color:white; line-height:1;">
+        @*<div class="landing-title" style="color:white; line-height:1;">
             Task Management<br />
-        </div>
-        @*<div class="col-md-12">
-                &nbsp;
-            </div>*@
-        <div class="col-md-12 py-2">
-            &nbsp;
-        </div>
+        </div>*@
+        
         <div>
             <div id="wo" class="container tab-pane active">
                 <div class="clearfix mb-2">
@@ -53,42 +48,23 @@
                                 {
                                     @Html.Hidden("TaskId", Model.ResultObject[i].task_id)
                                         <td> @Html.DisplayFor(Model => Model.ResultObject[i].row)</td>
-                                        @*<td> @Html.DisplayFor(Model => Model.ResultObject[i].task_id)</td>*@
-                                        @*<td> @Html.DisplayFor(Model => Model.ResultObject[i].task_name)</td>*@
                                         <td>
                                             @Html.TextBoxFor(Model => Model.TaskName, new { @class = "form-control search-vr", Value = Model.ResultObject[i].task_name, Type = "String" })
-                                            @*<div class="input-group-append">
-                                                <button type="submit" class="input-group-text-vr bg-indigo" id="basic-addon2" name="update" value="updatepm"><i class="fa fa-edit"></i></button>
-                                            </div>*@
                                         </td>
                                         <td>
                                             @Html.TextBoxFor(Model => Model.TaskDesc, new { @class = "form-control search-vr", Value = Model.ResultObject[i].task_description, Type = "Text" })
-                                            @*<div class="input-group-append">
-                                                <button type="submit" class="input-group-text-vr bg-indigo" id="basic-addon2" name="update" value="updatepm"><i class="fa fa-edit"></i></button>
-                                            </div>*@
                                         </td>
                                         <td>
                                             @Html.TextBoxFor(Model => Model.DueDate, new { @class = "form-control search-vr", Value = Model.ResultObject[i].due_date.ToString("yyyy-MM-dd"), Type = "Date" })
-                                            @*<div class="input-group-append">
-                                                <button type="submit" class="input-group-text-vr bg-indigo" id="basic-addon2" name="update" value="updatepm"><i class="fa fa-edit"></i></button>
-                                            </div>*@
                                         </td>
                                         <td>
                                             @Html.TextBoxFor(Model => Model.TaskStatus, new { @class = "form-control search-vr", Value = Model.ResultObject[i].status, Type = "Text" })
-                                            @*<div class="input-group-append">
-                                                <button type="submit" class="input-group-text-vr bg-indigo" id="basic-addon2" name="update" value="updatepm"><i class="fa fa-edit"></i></button>
-                                            </div>*@
                                         </td>
                                         <td>
                                             @Html.TextBoxFor(Model => Model.TaskPriority, new { @class = "form-control search-vr", Value = Model.ResultObject[i].priority, Type = "Text" })
-                                            @*<div class="input-group-append">
-                                                <button type="submit" class="input-group-text-vr bg-indigo" id="basic-addon2" name="update" value="updatepm"><i class="fa fa-edit"></i></button>
-                                            </div>*@
                                         </td>
                                         <td>
-                                            @*<button type="button" class="btn btn-dark btn-dvr" data-toggle="modal" data-target="#edittask" data-taskid="@Model.ResultObject[i].task_id" data-taskname="@Model.ResultObject[i].task_name" data-taskdesc="@Model.ResultObject[i].task_description" data-taskpriority="@Model.ResultObject[i].priority" data-taskstatus="@Model.ResultObject[i].status" name="edit" value="edit">Edit</button>*@
                                             <button type="submit" class="input-group-text-vr bg-indigo" id="basic-addon2" name="update" value="updatepm"><i class="fa fa-edit">Edit</i></button>
-                                            
                                         </td>
                                 }
                                 @using (Html.BeginForm("Delete", "Home", FormMethod.Post))
@@ -139,7 +115,6 @@
                     <div class="form-group">
                         <label>Status :</label>
                         @Html.TextBoxFor(Model => Model.TaskStatus, new { @class = "form-control search-vr", @placeholder = "Task Status" })
-                        @*@Html.DropDownListFor(Model => Model.TaskStatus, new SelectList("Hold", "Done", "On Progress"), "Select", new { @class = "form-control col-md-12" })*@
                     </div>
                     <div class="modal-footer noborder">
                         <button type="submit" class="btn btn-primary btn-pvr bg-indigo" name="insert" value="Submit">Submit</button>
@@ -151,35 +126,3 @@
     </div>
 </div>
 
-
-    @*@{
-            ViewBag.Title = "Home Page";
-        }
-
-        <div class="jumbotron">
-            <h1>ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Getting started</h2>
-                <p>
-                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                    enables a clean separation of concerns and gives you full control over markup
-                    for enjoyable, agile development.
-                </p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Get more libraries</h2>
-                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Web Hosting</h2>
-                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-            </div>
-        </div>*@

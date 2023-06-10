@@ -146,22 +146,7 @@ namespace TaskManagement.DTO
         }
         public async Task<string> Delete()
         {
-            //tb_task tas = new tb_task();
-            //tas.task_id = Convert.ToInt32(TaskId);
-
-            //HttpResponseMessage res = 
-                await Data.Delete(TaskId.ToString());
-            //if (res.IsSuccessStatusCode)
-            //{
-            //    status_error = true;
-            //    status_msg = "Update successful!";
-            //}
-            //else
-            //{
-            //    status_error = false;
-            //    status_msg = "Update failed!";
-            //}
-
+            await Data.Delete(TaskId.ToString());
             ClearAll();
             return "Done";
         }

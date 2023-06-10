@@ -219,6 +219,7 @@
     <Content Include="Models\TaskList.edmx.diagram">
       <DependentUpon>TaskList.edmx</DependentUpon>
     </Content>
+    <Content Include="Back up SQL Db\TechTest.bak" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
